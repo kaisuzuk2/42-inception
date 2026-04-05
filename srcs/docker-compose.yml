@@ -1,0 +1,26 @@
+services: 
+ mariadb: 
+  build: ./requirements/mariadb
+  container_name: mariadb
+  volumes:
+   - mariadb_data:/var/lib/mysql
+  environment: 
+   MYSQL_NAME: ${DB_NAME}
+   MYSQL_USER: ${DB_USER}
+   MYSQL_PASSWORD: ${DB_PASSWORD}
+   MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+  networks: 
+   - inception
+  restart: always
+volumes:
+  mariadb_data:
+   driver: local  
+   driver_opts: 
+    type: none
+    o: bind
+    #device: /home/kaisuzuk/data/mariadb
+    device: /Users/suzukikaisei/Desktop/data/mariadb
+networks: 
+  inception:
+   driver: bridge 
+   
