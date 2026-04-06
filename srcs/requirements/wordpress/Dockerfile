@@ -16,5 +16,7 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 RUN mkdir -p /var/www/html && \
     wp core download --locale=ja --path=/var/www/html --allow-root
 
+RUN mkdir -p /run/php
+
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["php-fpm7.4", "-F"]
