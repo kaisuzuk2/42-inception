@@ -13,10 +13,14 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 COPY ./tools/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-RUN mkdir -p /var/www/html && \
-    wp core download --locale=ja --path=/var/www/html --allow-root
+COPY ./conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf
 
-RUN mkdir -p /run/php
+RUN mkdir -p /var/www/html && \
+    wp core download --locale=ja --path=/var/www/html --allow-root && \
+    chown -R www-data:www-data /var/www/html
+
+RUN mkdir -p /run/php && \
+    chown -R www-data:www-data /run/php
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["php-fpm7.4", "-F"]
