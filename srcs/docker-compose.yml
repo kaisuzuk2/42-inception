@@ -35,6 +35,21 @@ services:
   networks: 
    - inception
   restart: always
+ nginx:
+  depends_on: 
+   wordpress: 
+    condition: service_started 
+  build: ./requirements/nginx
+  container_name: nginx
+  volumes: 
+   - wordpress_data:/var/www/html
+  ports: 
+   - 443:443
+  environment: 
+   DOMAIN_NAME: ${DOMAIN_NAME}
+  networks:
+   - inception
+  restart: always
 volumes:
   mariadb_data:
    driver: local  
