@@ -30,7 +30,7 @@
 - makeコマンドが使えること
 
 ## /etc/hosts/の設定
-sudo echo "127.0.0.1 <login>.42.fr" >> /etc/hosts
+sudo echo "127.0.0.1 'login.42.fr" >> /etc/hosts
 
 ## 起動方法
 make
@@ -44,7 +44,7 @@ make clean
 make fclean
 
 ## アクセス方法
-https://<login>.42.fr
+https://'login'.42.fr
 
 # リソース - Resources
 - [dockerdocs](https://docs.docker.com/manuals/)

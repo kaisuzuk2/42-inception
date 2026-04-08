@@ -30,7 +30,7 @@ This infrastructure consists of three Docker containers managed by Docker Compos
 - make command must be available
 
 ## /etc/hosts Configuration
-sudo echo "127.0.0.1 <login>.42.fr" >> /etc/hosts
+sudo echo "127.0.0.1 'login'.42.fr" >> /etc/hosts
 
 ## Start
 make
@@ -41,7 +41,7 @@ make
 - Remove everything including volumes: `make fclean`
 
 ## Access
-https://<login>.42.fr
+https://'login'.42.fr
 
 # Resources
 - [Docker docs](https://docs.docker.com/manuals/)
