@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     openssl
 
 COPY ./conf/wordpress.conf /etc/nginx/conf.d/wordpress.conf
-# RUN rm /etc/nginx/sites-available/default
+RUN rm /etc/nginx/sites-enabled/default
 
 COPY ./tools/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
