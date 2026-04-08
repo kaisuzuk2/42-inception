@@ -7,11 +7,12 @@ services:
   environment: 
    MYSQL_NAME: ${DB_NAME}
    MYSQL_USER: ${DB_USER}
-   MYSQL_PASSWORD: ${DB_PASSWORD}
-   MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
   networks: 
    - inception
   restart: always
+  secrets: 
+   - db_password
+   - db_root_password
  wordpress:
   depends_on: 
    mariadb: 
@@ -23,18 +24,14 @@ services:
   environment:
    DB_NAME: ${DB_NAME}
    DB_USER: ${DB_USER}
-   DB_PASSWORD: ${DB_PASSWORD}
    DOMAIN_NAME: ${DOMAIN_NAME}
    WP_TITLE: ${WP_TITLE}
-   WP_ADMIN_USER: ${WP_ADMIN_USER}
-   WP_ADMIN_PASSWORD: ${WP_ADMIN_PASSWORD}
-   WP_ADMIN_EMAIL: ${WP_ADMIN_EMAIL}
-   WP_USER: ${WP_USER}
-   WP_USER_EMAIL: ${WP_USER_EMAIL}
-   WP_USER_PASS: ${WP_USER_PASS}
   networks: 
    - inception
   restart: always
+  secrets:
+   - credentials
+   - db_password
  nginx:
   depends_on: 
    wordpress: 
@@ -68,4 +65,11 @@ volumes:
 networks: 
   inception:
    driver: bridge 
+secrets:
+ credentials:
+  file: ../secrets/credentials.txt
+ db_password:
+  file: ../secrets/db_password.txt
+ db_root_password:
+  file: ../secrets/db_root_password.txt
    

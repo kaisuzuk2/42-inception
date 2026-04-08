@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+source /run/secrets/credentials
+DB_PASSWORD=$(cat /run/secrets/db_password)
+
 for var in DOMAIN_NAME WP_TITLE WP_ADMIN_USER WP_ADMIN_PASSWORD WP_ADMIN_EMAIL WP_USER WP_USER_EMAIL WP_USER_PASS; do
     if [ -z "${!var}" ]; then
         echo "[Entrypoint] Error $var is not set"
