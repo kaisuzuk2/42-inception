@@ -4,7 +4,8 @@ RUN apt-get update && apt-get install -y \
     php-fpm \
     php-mysql \
     curl \
-    default-mysql-client
+    default-mysql-client && \
+    rm -rf /var/lib/apt/list/*
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \

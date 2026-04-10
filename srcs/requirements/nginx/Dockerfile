@@ -2,7 +2,8 @@ FROM debian:bullseye
 
 RUN apt-get update && apt-get install -y \
     nginx \
-    openssl
+    openssl && \
+    rm -rf /var/lib/apt/list/*
 
 COPY ./conf/wordpress.conf /etc/nginx/conf.d/wordpress.conf
 RUN rm /etc/nginx/sites-enabled/default
