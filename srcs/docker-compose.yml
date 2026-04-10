@@ -53,15 +53,13 @@ volumes:
    driver_opts: 
     type: none
     o: bind
-    #device: /home/kaisuzuk/data/mariadb
-    device: /Users/suzukikaisei/Desktop/data/mariadb
+    device: /home/kaisuzuk/data/mariadb
   wordpress_data:
    driver: local
    driver_opts: 
     type: none
     o: bind
-    #device: /home/kaisuzuk/data/wordpress
-    device: /Users/suzukikaisei/Desktop/data/wordpress
+    device: /home/kaisuzuk/data/wordpress
 networks: 
   inception:
    driver: bridge 
