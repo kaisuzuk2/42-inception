@@ -30,7 +30,7 @@
 - makeコマンドが使えること
 
 ## /etc/hosts/の設定
-sudo echo "127.0.0.1 'login.42.fr" >> /etc/hosts
+127.0.0.1 'login'.42.fr 
 
 ## 起動方法
 make

@@ -30,7 +30,7 @@ This infrastructure consists of three Docker containers managed by Docker Compos
 - make command must be available
 
 ## /etc/hosts Configuration
-sudo echo "127.0.0.1 'login'.42.fr" >> /etc/hosts
+127.0.0.1 'login'.42.fr
 
 ## Start
 make
