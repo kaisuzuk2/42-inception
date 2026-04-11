@@ -2,6 +2,7 @@ services:
  mariadb: 
   build: ./requirements/mariadb
   container_name: mariadb
+  image: mariadb:1.0
   volumes:
    - mariadb_data:/var/lib/mysql
   environment: 
@@ -19,6 +20,7 @@ services:
     condition: service_started
   build: ./requirements/wordpress
   container_name: wordpress
+  image: wordpres:1.0
   volumes:
    - wordpress_data:/var/www/html
   environment:
@@ -38,6 +40,7 @@ services:
     condition: service_started 
   build: ./requirements/nginx
   container_name: nginx
+  image: nginx:1.0
   volumes: 
    - wordpress_data:/var/www/html
   ports: 
