@@ -20,7 +20,7 @@ services:
     condition: service_started
   build: ./requirements/wordpress
   container_name: wordpress
-  image: wordpres:1.0
+  image: wordpress:1.0
   volumes:
    - wordpress_data:/var/www/html
   environment:
