@@ -52,19 +52,19 @@ docker ps
 docker compose -f srcs/docker-compose.yml logs
 
 ### Check logs for a specific container
-docker compose -f srcs/docker-compose.yml logs nginx
-docker compose -f srcs/docker-compose.yml logs wordpress
-docker compose -f srcs/docker-compose.yml logs mariadb
+- docker compose -f srcs/docker-compose.yml logs nginx
+- docker compose -f srcs/docker-compose.yml logs wordpress
+- docker compose -f srcs/docker-compose.yml logs mariadb
 
 ### Enter a container
-docker exec -it nginx bash
-docker exec -it wordpress bash
-docker exec -it mariadb bash
+- docker exec -it nginx bash
+- docker exec -it wordpress bash
+- docker exec -it mariadb bash
 
 ### Check container details
-docker inspect nginx
-docker inspect wordpress
-docker inspect mariadb
+- docker inspect nginx
+- docker inspect wordpress
+- docker inspect mariadb
 
 ## Volume Management
 
@@ -72,8 +72,8 @@ docker inspect mariadb
 docker volume ls
 
 ### Check volume details
-docker volume inspect srcs_mariadb_data
-docker volume inspect srcs_wordpress_data
+- docker volume inspect srcs_mariadb_data
+- docker volume inspect srcs_wordpress_data
 
 ## Network Management
 
