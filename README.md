@@ -29,6 +29,23 @@ This infrastructure consists of three Docker containers managed by Docker Compos
 - Install Docker. Instructions [here](https://docs.docker.com/engine/install/ubuntu/)
 - make command must be available
 
+## Prepare the secrets folder
+
+### secrets/db_password.txt
+Write the database password.
+
+### secrets/db_root_password.txt
+Write the database root password.
+
+### secrets/credentials.txt
+WP_ADMIN_USER=admin username (admin is not allowed)
+WP_ADMIN_PASSWORD=admin password
+WP_ADMIN_EMAIL=admin email address
+WP_USER=general user name
+WP_USER_EMAIL=general user email address
+WP_USER_PASS=general user password
+
+
 ## /etc/hosts Configuration
 127.0.0.1 'login'.42.fr
 

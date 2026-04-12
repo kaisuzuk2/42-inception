@@ -29,6 +29,22 @@
 - dockerをインストールする。手順は[こちら](https://docs.docker.com/engine/install/ubuntu/)
 - makeコマンドが使えること
 
+## secretsフォルダを準備する
+
+### secrets/db_password.txt
+データベースのパスワードを記載する。
+
+### secrets/db_root_password.txt
+データベースのルートパスワードを記載する。
+
+### secrets/credentials.txt
+WP_ADMIN_USER=管理者ユーザー名（admin禁止）
+WP_ADMIN_PASSWORD=管理者パスワード
+WP_ADMIN_EMAIL=管理者メールアドレス
+WP_USER=一般ユーザー名
+WP_USER_EMAIL=一般ユーザーメールアドレス
+WP_USER_PASS=一般ユーザーパスワード
+
 ## /etc/hosts/の設定
 127.0.0.1 'login'.42.fr 
 
