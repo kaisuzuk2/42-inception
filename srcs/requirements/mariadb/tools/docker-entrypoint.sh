@@ -16,9 +16,20 @@ if [ ! -d "/var/lib/mysql/$MYSQL_NAME" ]; then
     "$@" --skip-networking &
     MARIADB_PID=$!
 
-    until mysqladmin ping --silent; do
+    # until mysqladmin ping --silent; do
+    #     sleep 1
+    # done
+
+    for i in {30..0}; do
+        if mysqladmin ping --silent; then
+            break
+        fi
         sleep 1
     done
+    if [ "$i" = 0 ]; then
+        echo "[Entrypoint] Error: Unable to start server."
+        exit 1
+    fi
 
     mariadb -u root <<-EOF
         CREATE DATABASE $MYSQL_NAME;
