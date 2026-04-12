@@ -23,6 +23,7 @@ for i in {30..0}; do
 done
 if [ "$i" = 0 ]; then
     echo "[Entrypoint] Error: Unable to start database."
+    exit 1
 fi
 
 if [ ! -f "/var/www/html/wp-config.php" ]; then
