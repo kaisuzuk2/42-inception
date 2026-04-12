@@ -82,8 +82,8 @@ docker volume ls
 
 ### ボリュームの詳細確認
 
-docker volume inspect srcs_mariadb_data
-docker volume inspect srcs_wordpress_data
+- docker volume inspect srcs_mariadb_data
+- docker volume inspect srcs_wordpress_data
 
 ## ネットワークの管理
 
