@@ -55,6 +55,6 @@ If all containers are in the `Up` state, they are running correctly.
 docker compose -f srcs/docker-compose.yml logs
 
 ### Check logs for a specific container
-docker compose -f srcs/docker-compose.yml logs wordpress
-docker compose -f srcs/docker-compose.yml logs nginx
-docker compose -f srcs/docker-compose.yml logs mariadb
+- docker compose -f srcs/docker-compose.yml logs wordpress
+- docker compose -f srcs/docker-compose.yml logs nginx
+- docker compose -f srcs/docker-compose.yml logs mariadb
