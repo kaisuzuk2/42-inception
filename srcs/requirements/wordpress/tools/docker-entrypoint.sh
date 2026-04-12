@@ -11,9 +11,19 @@ for var in DOMAIN_NAME WP_TITLE WP_ADMIN_USER WP_ADMIN_PASSWORD WP_ADMIN_EMAIL W
     fi
 done
 
-until mysqladmin ping -h mariadb -u$DB_USER -p$DB_PASSWORD --silent; do
+# until mysqladmin ping -h mariadb -u$DB_USER -p$DB_PASSWORD --silent; do
+#     sleep 1
+# done
+
+for i in {30..0}; do 
+    if mysqladmin ping -h mariadb -u$DB_USER -p$DB_PASSWORD --silent; then
+        break
+    fi
     sleep 1
 done
+if [ "$i" = 0 ]; then
+    echo "[Entrypoint] Error: Unable to start database."
+fi
 
 if [ ! -f "/var/www/html/wp-config.php" ]; then
     wp --path=/var/www/html config create \
