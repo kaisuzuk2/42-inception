@@ -1,4 +1,5 @@
 # 提供されるサービスの説明 -  Understand what services are provided by the stack.
+
 ## NGINX
 - ポート443でHTTPS通信を受け付けるWebサーバー
 - TLS1.2 / TLS1.3のみをサポートし、外部からの唯一のエントリポイント
